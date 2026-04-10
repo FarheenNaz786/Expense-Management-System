@@ -1,0 +1,280 @@
+.navbar {
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(30, 41, 59, 0.95) 100%) !important;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: var(--spacing-sm) var(--spacing-lg);
+  transition: all var(--transition-base);
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+.navbar .navbar-brand {
+  color: var(--text-white) !important;
+  font-weight: 700;
+  font-size: 1.5rem;
+  margin-left: var(--spacing-sm);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  text-decoration: none;
+  transition: all var(--transition-base);
+}
+
+.navbar .navbar-brand:hover {
+  color: var(--primary-light) !important;
+  transform: translateX(2px);
+}
+
+.navbar img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  margin-right: var(--spacing-sm);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  transition: all var(--transition-base);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.navbar .navbar-brand:hover img {
+  border-color: var(--primary-light);
+  transform: scale(1.05);
+}
+
+.nav-link {
+  color: var(--text-white) !important;
+  font-size: 1.1rem;
+  font-weight: 500;
+  transition: all var(--transition-base);
+}
+
+.navbar h6 {
+  margin-top: 0;
+  margin-right: var(--spacing-lg);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.navbar .nav-item {
+  margin-right: var(--spacing-md);
+}
+
+/* Match gap between admin buttons to Login/Sign Up spacing */
+.navbar .nav-item.admin-buttons-group {
+  margin-right: var(--spacing-md);
+}
+
+/* Increase gap between Admin Dashboard and Login to visually separate admin buttons from app buttons */
+.navbar .nav-item.admin-buttons-group:last-of-type {
+  margin-right: var(--spacing-xl);
+}
+
+.navbar .nav-link .home-btn {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: var(--text-white);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-xs) var(--spacing-md);
+  font-weight: 500;
+  transition: all var(--transition-base);
+  text-decoration: none;
+  display: inline-block;
+}
+
+.navbar .nav-link .home-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+
+.navbar .nav-link .home-btn a {
+  color: var(--text-white);
+  text-decoration: none;
+}
+
+.navbar .nav-link .home-btn:hover a {
+  color: var(--text-white);
+}
+
+.navbar .nav-link .login-btn {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: var(--text-white);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-xs) var(--spacing-md);
+  font-weight: 500;
+  transition: all var(--transition-base);
+  text-decoration: none;
+  display: inline-block;
+}
+
+.navbar .nav-link .login-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+
+.navbar .nav-link .register-btn {
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+  border: none;
+  color: var(--text-white);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-xs) var(--spacing-md);
+  font-weight: 600;
+  transition: all var(--transition-base);
+  text-decoration: none;
+  display: inline-block;
+  box-shadow: var(--shadow-sm);
+}
+
+.navbar .nav-link .register-btn:hover {
+  background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-color) 100%);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.navbar .nav-link .admin-request-btn {
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  color: var(--secondary-color);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-xs) var(--spacing-md);
+  font-weight: 500;
+  transition: all var(--transition-base);
+  text-decoration: none;
+  display: inline-block;
+}
+
+.navbar .nav-link .admin-request-btn:hover {
+  background: rgba(16, 185, 129, 0.2);
+  border-color: rgba(16, 185, 129, 0.5);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+
+.navbar .nav-link .admin-request-btn a {
+  color: var(--secondary-color);
+  text-decoration: none;
+}
+
+.navbar .nav-link .admin-request-btn:hover a {
+  color: var(--secondary-dark);
+}
+
+.navbar .nav-link .admin-dashboard-btn {
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.2) 0%, rgba(124, 58, 237, 0.2) 100%);
+  border: 1px solid rgba(139, 92, 246, 0.4);
+  color: #a78bfa;
+  border-radius: var(--radius-md);
+  padding: var(--spacing-xs) var(--spacing-md);
+  font-weight: 600;
+  transition: all var(--transition-base);
+  text-decoration: none;
+  display: inline-block;
+  box-shadow: var(--shadow-sm);
+}
+
+.navbar .nav-link .admin-dashboard-btn:hover {
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.3) 0%, rgba(124, 58, 237, 0.3) 100%);
+  border-color: rgba(139, 92, 246, 0.6);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.navbar .nav-link .admin-dashboard-btn a {
+  color: #a78bfa;
+  text-decoration: none;
+}
+
+.navbar .nav-link .admin-dashboard-btn:hover a {
+  color: #8b5cf6;
+}
+
+.navbar .user-home-btn {
+  display: flex;
+  align-items: center;
+}
+
+.navbar .user-home-btn a {
+  color: var(--text-white) !important;
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  transition: all var(--transition-base);
+  font-weight: 500;
+}
+
+.navbar .user-home-btn:hover a {
+  color: var(--primary-light) !important;
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+.responsive-btn {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-xs);
+}
+
+.responsive-btn:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+@media screen and (max-width: 768px) {
+  .navbar {
+    padding: var(--spacing-sm) var(--spacing-md);
+  }
+
+  .navbar .navbar-brand {
+    font-size: 1.3rem;
+  }
+
+  .navbar img {
+    width: 35px;
+    height: 35px;
+  }
+
+  .navbar .nav-link {
+    font-size: 1rem;
+  }
+
+  .navbar .nav-item {
+    margin-right: var(--spacing-sm);
+  }
+
+  .navbar .nav-link .home-btn,
+  .navbar .nav-link .login-btn,
+  .navbar .nav-link .register-btn,
+  .navbar .nav-link .admin-request-btn,
+  .navbar .nav-link .admin-dashboard-btn {
+    padding: var(--spacing-xs) var(--spacing-sm);
+    font-size: 0.9rem;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .navbar .navbar-brand {
+    font-size: 1.2rem;
+  }
+
+  .navbar img {
+    width: 30px;
+    height: 30px;
+  }
+
+  .navbar .nav-link {
+    font-size: 0.9rem;
+  }
+
+  .navbar .nav-item {
+    margin-right: var(--spacing-xs);
+  }
+}

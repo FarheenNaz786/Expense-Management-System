@@ -1,0 +1,298 @@
+/* Auth page wrapper to ensure full background coverage */
+.auth-page-wrapper {
+  min-height: 100vh;
+  width: 100%;
+  max-width: 100vw;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  position: relative;
+  overflow: hidden;
+  overflow-x: hidden;
+}
+
+.login-content {
+  min-height: 100vh;
+  width: 100%;
+  max-width: 100vw;
+  background: transparent;
+  position: relative;
+  overflow: hidden;
+  overflow-x: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-lg);
+  padding-top: calc(var(--spacing-lg) + 60px); /* Account for header height */
+  z-index: 0;
+  box-sizing: border-box;
+}
+
+.auth-page-wrapper::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+  animation: rotate 20s linear infinite;
+  z-index: 0;
+  pointer-events: none;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.login-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 500px;
+  position: relative;
+  z-index: 2;
+}
+
+.login-form {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  padding: var(--spacing-2xl);
+  border-radius: var(--radius-xl);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  animation: fadeIn 0.6s ease-out;
+  transition: all var(--transition-base);
+}
+
+.login-form:hover {
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.35);
+  transform: translateY(-5px);
+}
+
+.login-form h2 {
+  text-align: center;
+  font-weight: 700;
+  padding-top: 0;
+  margin-bottom: var(--spacing-xl);
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-size: 2rem;
+}
+
+.login-form .header-name {
+  border-bottom: 3px solid;
+  border-image: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%) 1;
+  padding-bottom: var(--spacing-md);
+  margin-bottom: var(--spacing-xl);
+}
+
+.login-form a {
+  color: var(--primary-color) !important;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all var(--transition-fast);
+}
+
+.login-form a:hover {
+  color: var(--primary-dark) !important;
+  text-decoration: underline;
+}
+
+/* Modern Input Styling - Same as Request Admin Access */
+.login-form .ant-form-item-label > label {
+  color: var(--text-primary);
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.login-form .form-input {
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  transition: all var(--transition-base);
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.login-form .form-input:hover {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 2px rgba(102, 126, 234, 0.1);
+}
+
+.login-form .form-input:focus,
+.login-form .form-input.ant-input-affix-wrapper-focused {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 2px rgba(102, 126, 234, 0.2);
+}
+
+.login-form .form-input .ant-input-prefix {
+  color: var(--primary-color);
+  margin-right: var(--spacing-sm);
+}
+
+
+
+.login-form .ant-input-password-icon {
+  color: var(--gray-500);
+  transition: all var(--transition-base);
+  padding: 4px;
+  border-radius: var(--radius-sm);
+}
+
+.login-form .ant-input-password-icon:hover {
+  color: var(--primary-color);
+  background-color: rgba(99, 102, 241, 0.1);
+  transform: scale(1.1);
+}
+
+.login-form .ant-input-affix-wrapper-focused .ant-input-password-icon {
+  color: var(--primary-color);
+}
+
+.login-form .button button,
+.login-form .btn {
+  margin-top: var(--spacing-md);
+  width: 100%;
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+  color: var(--text-white);
+  outline: none;
+  border: none;
+  padding: var(--spacing-md);
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  box-shadow: var(--shadow-md);
+}
+
+.login-form .button button:hover,
+.login-form .btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+  background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-color) 100%);
+}
+
+.login-form .button button:disabled,
+.login-form .btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.login-form .text {
+  color: var(--text-secondary) !important;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.login-form .line {
+  position: relative;
+  height: 1px;
+  width: 100%;
+  margin: var(--spacing-xl) 0;
+  background: linear-gradient(to right, transparent, var(--gray-300), transparent);
+}
+
+.login-form .line::before {
+  content: "OR";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(255, 255, 255, 0.95);
+  color: var(--text-secondary);
+  padding: 0 var(--spacing-md);
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+
+@media screen and (max-width: 992px) {
+  .login-content {
+    padding: var(--spacing-md);
+  }
+
+  .login-form {
+    padding: var(--spacing-xl);
+    max-width: 90%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .login-content {
+    padding: var(--spacing-sm);
+    padding-top: calc(var(--spacing-md) + 60px);
+    min-height: 100vh;
+  }
+
+  .login-form {
+    padding: var(--spacing-lg);
+    max-width: 100%;
+  }
+
+  .login-form h2 {
+    font-size: 1.75rem;
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .login-form .ant-input,
+  .login-form .ant-input-password {
+    padding: 12px 14px;
+    font-size: 0.95rem;
+  }
+
+  .login-form .ant-input-affix-wrapper .ant-input {
+    padding: 12px 14px;
+  }
+
+}
+
+@media screen and (max-width: 480px) {
+  .login-content {
+    padding: var(--spacing-xs);
+    padding-top: calc(var(--spacing-sm) + 60px);
+  }
+
+  .login-form {
+    padding: var(--spacing-md);
+    border-radius: var(--radius-lg);
+  }
+
+  .login-form h2 {
+    font-size: 1.5rem;
+    margin-bottom: var(--spacing-md);
+  }
+
+  .login-form .ant-input,
+  .login-form .ant-input-password {
+    padding: 10px 12px;
+    font-size: 16px; /* Prevents zoom on iOS */
+  }
+
+  .login-form .ant-input-affix-wrapper .ant-input {
+    padding: 10px 12px;
+  }
+
+  .login-form .button button,
+  .login-form .btn {
+    padding: var(--spacing-sm);
+    font-size: 0.95rem;
+  }
+
+  .login-page .login-with-google-btn {
+    padding: var(--spacing-sm) var(--spacing-md);
+    padding-left: 45px;
+    font-size: 0.9rem;
+  }
+
+  .login-form .text {
+    font-size: 0.9rem;
+  }
+}

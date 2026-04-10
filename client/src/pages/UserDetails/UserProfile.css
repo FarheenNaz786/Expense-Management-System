@@ -1,0 +1,314 @@
+/* User Profile Wrapper */
+.user-profile-wrapper {
+  min-height: calc(100vh - 200px);
+  width: 100%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding: var(--spacing-xl) var(--spacing-lg);
+}
+
+.user-profile-wrapper::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+  animation: rotate 20s linear infinite;
+  z-index: 0;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.user-profile-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+/* User Profile Card */
+.user-profile-card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  border-radius: var(--radius-xl);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  animation: fadeInUp 0.6s ease-out;
+  overflow: hidden;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.user-profile-card .ant-card-body {
+  padding: var(--spacing-2xl);
+}
+
+/* User Profile Header */
+.user-profile-header {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-lg);
+  margin-bottom: var(--spacing-xl);
+  padding-bottom: var(--spacing-lg);
+  border-bottom: 2px solid rgba(102, 126, 234, 0.1);
+}
+
+.profile-header-icon {
+  font-size: 3rem;
+  color: #667eea;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: drop-shadow(0 2px 8px rgba(102, 126, 234, 0.4));
+}
+
+.profile-header-text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.profile-header-title {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.profile-header-subtitle {
+  margin: 0;
+  font-size: 1rem;
+  color: var(--text-secondary);
+  font-weight: 400;
+}
+
+/* User Profile Content */
+.user-profile-content {
+  padding: var(--spacing-md) 0;
+}
+
+/* Horizontal Layout Section */
+.detail-section-horizontal {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-lg);
+}
+
+.detail-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-md);
+}
+
+.detail-item-horizontal {
+  display: flex;
+  flex-direction: column;
+  padding: var(--spacing-md);
+  background: rgba(102, 126, 234, 0.05);
+  border-radius: var(--radius-md);
+  border-left: 3px solid var(--primary-color);
+  transition: all var(--transition-base);
+}
+
+.detail-item-horizontal:hover {
+  background: rgba(102, 126, 234, 0.1);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.15);
+}
+
+.detail-item-horizontal.full-width {
+  grid-column: 1 / -1;
+}
+
+/* Vertical Layout Section */
+.detail-section-vertical {
+  margin-bottom: var(--spacing-lg);
+}
+
+.detail-item-vertical {
+  display: flex;
+  flex-direction: column;
+  padding: var(--spacing-md);
+  background: rgba(102, 126, 234, 0.05);
+  border-radius: var(--radius-md);
+  border-left: 3px solid var(--primary-color);
+  transition: all var(--transition-base);
+}
+
+.detail-item-vertical:hover {
+  background: rgba(102, 126, 234, 0.1);
+  transform: translateX(5px);
+}
+
+.detail-label {
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-bottom: var(--spacing-xs);
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+}
+
+.detail-value {
+  color: var(--text-primary);
+  font-size: 1rem;
+  margin-top: var(--spacing-xs);
+  word-break: break-word;
+}
+
+/* Field Display and Edit Sections */
+.field-display-section {
+  display: flex;
+  align-items: center;
+  margin-top: var(--spacing-xs);
+  flex-wrap: wrap;
+  gap: var(--spacing-xs);
+}
+
+.field-edit-section {
+  margin-top: var(--spacing-xs);
+  width: 100%;
+}
+
+.field-edit-buttons {
+  display: flex;
+  gap: var(--spacing-xs);
+  margin-top: var(--spacing-xs);
+}
+
+/* User Profile Footer */
+.user-profile-footer {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: var(--spacing-lg);
+  border-top: 1px solid rgba(102, 126, 234, 0.1);
+  margin-top: var(--spacing-lg);
+}
+
+/* Responsive Design */
+@media screen and (max-width: 992px) {
+  .user-profile-wrapper {
+    padding: var(--spacing-lg) var(--spacing-md);
+  }
+
+  .user-profile-card .ant-card-body {
+    padding: var(--spacing-xl);
+  }
+
+  .profile-header-title {
+    font-size: 1.75rem;
+  }
+
+  .profile-header-icon {
+    font-size: 2.5rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .user-profile-wrapper {
+    padding: var(--spacing-md) var(--spacing-sm);
+  }
+
+  .user-profile-card .ant-card-body {
+    padding: var(--spacing-lg);
+  }
+
+  .profile-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-md);
+  }
+
+  .profile-header-title {
+    font-size: 1.5rem;
+  }
+
+  .profile-header-icon {
+    font-size: 2rem;
+  }
+
+  .detail-row {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-sm);
+  }
+
+  .detail-item-horizontal.full-width {
+    grid-column: 1;
+  }
+
+  .user-profile-footer {
+    flex-direction: column;
+  }
+
+  .user-profile-footer .ant-btn {
+    width: 100%;
+    margin-right: 0 !important;
+    margin-bottom: var(--spacing-sm);
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .user-profile-wrapper {
+    padding: var(--spacing-sm);
+  }
+
+  .user-profile-card .ant-card-body {
+    padding: var(--spacing-md);
+  }
+
+  .profile-header-title {
+    font-size: 1.25rem;
+  }
+
+  .profile-header-subtitle {
+    font-size: 0.9rem;
+  }
+
+  .detail-section-horizontal,
+  .detail-section-vertical {
+    margin-bottom: var(--spacing-md);
+  }
+
+  .detail-row {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-xs);
+  }
+
+  .detail-item-horizontal,
+  .detail-item-vertical {
+    padding: var(--spacing-sm);
+  }
+
+  .detail-label {
+    font-size: 0.85rem;
+  }
+
+  .detail-value {
+    font-size: 0.9rem;
+  }
+}

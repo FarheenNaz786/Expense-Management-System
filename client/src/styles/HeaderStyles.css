@@ -1,0 +1,248 @@
+.navbar {
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(30, 41, 59, 0.95) 100%) !important;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: var(--spacing-sm) var(--spacing-lg);
+  transition: all var(--transition-base);
+}
+
+.navbar .navbar-brand {
+  color: var(--text-white) !important;
+  font-weight: 700;
+  font-size: 1.5rem;
+  margin-left: var(--spacing-sm);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  text-decoration: none;
+  transition: all var(--transition-base);
+}
+
+.navbar .navbar-brand:hover {
+  color: var(--primary-light) !important;
+  transform: translateX(2px);
+}
+
+.navbar img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  margin-right: var(--spacing-sm);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  transition: all var(--transition-base);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.navbar .navbar-brand:hover img {
+  border-color: var(--primary-light);
+  transform: scale(1.05);
+}
+
+.nav-link {
+  color: var(--text-white) !important;
+  font-size: 1.1rem;
+  font-weight: 500;
+  transition: all var(--transition-base);
+}
+
+.navbar h6 {
+  margin-top: 0;
+  margin-right: var(--spacing-lg);
+  display: flex;
+  align-items: center;
+}
+
+.navbar .nav-item {
+  margin-right: var(--spacing-lg);
+}
+
+.navbar .nav-link .home-btn {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: var(--text-white);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-xs) var(--spacing-md);
+  font-weight: 500;
+  transition: all var(--transition-base);
+  text-decoration: none;
+  display: inline-block;
+}
+
+.navbar .nav-link .home-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+
+.navbar .nav-link .home-btn a {
+  color: var(--text-white);
+  text-decoration: none;
+}
+
+.navbar .nav-link .home-btn:hover a {
+  color: var(--text-white);
+}
+
+.navbar .user-home-btn {
+  display: flex;
+  align-items: center;
+}
+
+.navbar .user-home-btn a {
+  color: var(--text-white) !important;
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  transition: all var(--transition-base);
+  font-weight: 500;
+}
+
+.navbar .user-home-btn a:hover {
+  color: var(--primary-light) !important;
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+.navbar .ant-dropdown-button {
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.navbar .ant-btn {
+  border-radius: var(--radius-md);
+  font-weight: 500;
+  transition: all var(--transition-base);
+}
+
+.navbar .ant-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.responsive-btn {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-xs);
+}
+
+.responsive-btn:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+@media screen and (max-width: 768px) {
+  .navbar {
+    padding: var(--spacing-sm) var(--spacing-md);
+  }
+
+  .navbar .navbar-brand {
+    font-size: 1.2rem;
+  }
+
+  .navbar img {
+    width: 35px;
+    height: 35px;
+  }
+
+  .nav-link {
+    font-size: 1rem;
+  }
+
+  .navbar .nav-item {
+    margin-right: var(--spacing-sm);
+  }
+
+  .navbar .nav-link .home-btn {
+    padding: var(--spacing-xs) var(--spacing-sm);
+    font-size: 0.9rem;
+  }
+
+  .navbar .user-home-btn a {
+    padding: var(--spacing-xs) var(--spacing-sm);
+    font-size: 0.95rem;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .navbar .navbar-brand {
+    font-size: 1rem;
+  }
+
+  .navbar img {
+    width: 30px;
+    height: 30px;
+  }
+
+  .nav-link {
+    font-size: 0.9rem;
+  }
+
+  .navbar .nav-item {
+    margin-right: var(--spacing-xs);
+  }
+}
+
+/* Logout Menu Item Styling */
+.logout-menu-item {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  width: 100% !important;
+  color: #ff4d4f !important;
+  font-weight: 500 !important;
+  cursor: pointer !important;
+}
+
+.logout-menu-item .anticon {
+  color: #ff4d4f !important;
+}
+
+.logout-menu-item span {
+  color: #ff4d4f !important;
+}
+
+/* Ant Design Dropdown Menu Item Danger Styling */
+.ant-dropdown-menu-item-danger {
+  color: #ff4d4f !important;
+  padding: 0 !important;
+}
+
+.ant-dropdown-menu-item-danger .logout-menu-item {
+  padding: 4px 12px !important;
+  margin: 0 !important;
+  color: #ff4d4f !important;
+}
+
+.ant-dropdown-menu-item-danger .logout-menu-item .anticon,
+.ant-dropdown-menu-item-danger .logout-menu-item span {
+  color: #ff4d4f !important;
+}
+
+.ant-dropdown-menu-item-danger:hover {
+  background-color: #fff1f0 !important;
+}
+
+.ant-dropdown-menu-item-danger:hover .logout-menu-item {
+  background-color: #fff1f0 !important;
+  color: #ff4d4f !important;
+}
+
+.ant-dropdown-menu-item-danger:hover .logout-menu-item .anticon,
+.ant-dropdown-menu-item-danger:hover .logout-menu-item span {
+  color: #ff4d4f !important;
+}
+
+/* Logout Confirmation Modal */
+.logout-confirmation-modal .ant-modal-content {
+  border-top: 3px solid #ff4d4f;
+}
+
+.logout-confirmation-modal .ant-modal-header {
+  border-bottom: 1px solid #ffccc7;
+}
+
+.logout-confirmation-modal .ant-modal-title {
+  color: #ff4d4f;
+}

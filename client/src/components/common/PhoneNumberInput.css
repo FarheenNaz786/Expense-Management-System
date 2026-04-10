@@ -1,0 +1,334 @@
+/* Phone Number Input Component Styles - Single Unified Input */
+.phone-number-input-group {
+  display: flex !important;
+  width: 100% !important;
+  align-items: stretch !important;
+  gap: 0 !important;
+  position: relative;
+  border: 1px solid #d9d9d9;
+  border-radius: 6px;
+  background: #fff;
+  transition: all 0.3s;
+  overflow: hidden;
+}
+
+.phone-number-input-group:hover {
+  border-color: #40a9ff;
+}
+
+/* Country code select - left side */
+.phone-number-input-group .country-code-select {
+  flex-shrink: 0 !important;
+  width: auto !important;
+  min-width: 85px;
+  max-width: 120px;
+  border: none !important;
+}
+
+/* Phone number input - right side, takes remaining space */
+.phone-number-input-group .phone-number-input {
+  flex: 1 !important;
+  min-width: 0 !important;
+  width: auto !important;
+  border: none !important;
+}
+
+/* Remove all borders from inner components */
+.phone-number-input-group .country-code-select .ant-select-selector {
+  height: 100% !important;
+  display: flex !important;
+  align-items: center !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  background: transparent !important;
+  padding-right: 20px !important;
+  padding-left: 8px !important;
+}
+
+.phone-number-input-group .phone-number-input {
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  background: transparent !important;
+}
+
+/* Divider between country code and phone number */
+.phone-number-input-group .country-code-select .ant-select-selector::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1px;
+  height: 60%;
+  background: #d9d9d9;
+}
+
+/* Focus state for the entire group */
+.phone-number-input-group:has(.ant-select-focused),
+.phone-number-input-group:has(.ant-input-focused) {
+  border-color: #1890ff !important;
+  box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
+}
+
+.phone-number-input-group .country-code-select.ant-select-focused .ant-select-selector,
+.phone-number-input-group .phone-number-input.ant-input-focused {
+  box-shadow: none !important;
+}
+
+/* Country Option Styles */
+.country-option-content {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.country-flag {
+  font-size: 20px;
+  line-height: 1;
+}
+
+.country-code {
+  font-weight: 500;
+  color: #1f2937;
+}
+
+.country-name-hover {
+  display: none;
+  margin-left: auto;
+  color: #6b7280;
+  font-size: 13px;
+}
+
+/* Show country name on hover */
+.ant-select-item-option:hover .country-name-hover {
+  display: inline-block;
+}
+
+/* Selected value display - show only flag and code */
+.selected-country-display {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.selected-country-display .country-flag {
+  font-size: 18px;
+  line-height: 1;
+  display: inline-block;
+}
+
+.selected-country-display .country-code {
+  font-weight: 500;
+  color: #1f2937;
+}
+
+.country-code-select .ant-select-selection-item {
+  display: flex !important;
+  align-items: center !important;
+  gap: 3px !important;
+  padding-right: 0 !important;
+  padding-left: 0 !important;
+  margin-right: 0 !important;
+  overflow: visible !important;
+  width: 100%;
+  min-width: 0;
+}
+
+/* Ensure country name is hidden in selected value */
+.country-code-select .ant-select-selection-item .country-name-hover {
+  display: none !important;
+}
+
+/* Compact spacing for country code select */
+.country-code-select .ant-select-selection-search {
+  display: none !important;
+}
+
+.country-code-select .ant-select-selection-item {
+  flex: 1;
+  min-width: 0;
+  max-width: 100%;
+}
+
+.country-code-select .ant-select-arrow {
+  margin-right: 2px !important;
+  right: 6px !important;
+  font-size: 12px !important;
+}
+
+/* Ensure flag and code are visible in selected value */
+.country-code-select .ant-select-selection-item .selected-country-display {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  width: 100%;
+  min-width: 0;
+}
+
+.country-code-select .ant-select-selection-item .selected-country-display .country-flag {
+  font-size: 15px;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.country-code-select .ant-select-selection-item .selected-country-display .country-code {
+  font-weight: 500;
+  color: #1f2937;
+  font-size: 13px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* Ensure both components have same height and alignment */
+.phone-number-input-group .ant-select {
+  display: flex !important;
+  align-items: stretch !important;
+  height: 100% !important;
+}
+
+.phone-number-input-group .ant-input-wrapper {
+  display: flex !important;
+  flex: 1 !important;
+  align-items: stretch !important;
+}
+
+.phone-number-input-group .ant-input {
+  height: 100% !important;
+}
+
+/* Fix height consistency - ensure both are same height */
+.phone-number-input-group .country-code-select .ant-select-selector,
+.phone-number-input-group .phone-number-input {
+  box-sizing: border-box;
+  line-height: 1.5715;
+  height: 100% !important;
+}
+
+/* Responsive adjustments - Tablet */
+@media screen and (max-width: 992px) {
+  .country-code-select {
+    min-width: 90px;
+    max-width: 110px;
+  }
+  
+  .country-code-select .ant-select-selection-item .selected-country-display .country-flag {
+    font-size: 14px;
+  }
+  
+  .country-code-select .ant-select-selection-item .selected-country-display .country-code {
+    font-size: 12px;
+  }
+}
+
+/* Responsive adjustments - Mobile Landscape */
+@media screen and (max-width: 768px) {
+  .country-code-select {
+    min-width: 85px;
+    max-width: 100px;
+  }
+  
+  .country-code-select .ant-select-selection-item .selected-country-display {
+    gap: 2px;
+  }
+  
+  .country-code-select .ant-select-selection-item .selected-country-display .country-flag {
+    font-size: 14px;
+  }
+  
+  .country-code-select .ant-select-selection-item .selected-country-display .country-code {
+    font-size: 11px;
+  }
+  
+  .country-code-select .ant-select-selector {
+    padding-left: 5px !important;
+    padding-right: 18px !important;
+  }
+  
+  .country-code-select .ant-select-arrow {
+    right: 5px !important;
+    font-size: 11px !important;
+  }
+}
+
+/* Responsive adjustments - Mobile Portrait */
+@media screen and (max-width: 480px) {
+  .country-code-select {
+    min-width: 80px;
+    max-width: 95px;
+  }
+  
+  .country-code-select .ant-select-selection-item .selected-country-display {
+    gap: 2px;
+  }
+  
+  .country-code-select .ant-select-selection-item .selected-country-display .country-flag {
+    font-size: 13px;
+  }
+  
+  .country-code-select .ant-select-selection-item .selected-country-display .country-code {
+    font-size: 10px;
+  }
+  
+  .country-code-select .ant-select-selector {
+    padding-left: 4px !important;
+    padding-right: 16px !important;
+    font-size: 12px;
+  }
+  
+  .country-code-select .ant-select-arrow {
+    right: 4px !important;
+    font-size: 10px !important;
+  }
+  
+  /* Ensure phone input aligns properly */
+  .phone-number-input-group .phone-number-input {
+    font-size: 14px;
+  }
+}
+
+/* Responsive adjustments - Small Mobile */
+@media screen and (max-width: 360px) {
+  .country-code-select {
+    min-width: 75px;
+    max-width: 90px;
+  }
+  
+  .country-code-select .ant-select-selection-item .selected-country-display .country-flag {
+    font-size: 12px;
+  }
+  
+  .country-code-select .ant-select-selection-item .selected-country-display .country-code {
+    font-size: 9px;
+  }
+  
+  .country-code-select .ant-select-selector {
+    padding-left: 3px !important;
+    padding-right: 14px !important;
+  }
+  
+  .country-code-select .ant-select-arrow {
+    right: 3px !important;
+    font-size: 9px !important;
+  }
+}
+
+/* Ensure dropdown items are responsive */
+@media screen and (max-width: 480px) {
+  .country-option-content {
+    gap: 6px;
+  }
+  
+  .country-option-content .country-flag {
+    font-size: 18px;
+  }
+  
+  .country-option-content .country-code {
+    font-size: 13px;
+  }
+  
+  .country-name-hover {
+    font-size: 12px;
+  }
+}
